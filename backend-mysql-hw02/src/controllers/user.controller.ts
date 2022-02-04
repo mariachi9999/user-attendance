@@ -35,6 +35,7 @@ export const getUserById = async (
   req: Request,
   res: Response
 ): Promise<Response> => {
+  console.log("llegó a getUserId");
   const attendance = await getAttendance(req.params.id);
   console.log(attendance.data);
   const results = await getRepository(User).findOne(req.params.id);
